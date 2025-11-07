@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../main_appbar/main_appbar.dart';
 import '../providers/home_notifier.dart';
 
 class HomeView extends ConsumerWidget {
@@ -11,7 +12,10 @@ class HomeView extends ConsumerWidget {
     final notifier = ref.read(homeProvider.notifier);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Home')),
+      appBar: MainAppBar(
+        title: 'Select Recipes',
+        isCenter: true,
+      ),
       body: Center(
         child: state.isLoading
             ? const CircularProgressIndicator()

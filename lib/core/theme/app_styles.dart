@@ -83,34 +83,5 @@ const TextStyle labelSmallStyle = TextStyle(
 );
 //decoration
 
-//for premium screen
-final BoxDecoration containerDecoration = BoxDecoration(
-  color: Colors.grey.shade100,
-  borderRadius: BorderRadius.circular(12),
-  border: Border.all(color: Colors.grey.shade300),
-);
-
-final BoxDecoration roundedDecoration = BoxDecoration(
-  color: Colors.grey.shade100,
-  borderRadius: BorderRadius.circular(35),
-  border: Border.all(color: Colors.grey.shade300),
-);
-
-final BoxDecoration dictionaryContainerDecoration = BoxDecoration(
-  color:kWhite,
-  borderRadius: BorderRadius.circular(16),
-  boxShadow: [
-    BoxShadow(
-      color: Colors.black.withAlpha(20),
-      blurRadius: 12,
-      offset: const Offset(0,2),
-    ),
-    BoxShadow(
-      color: Colors.white.withAlpha(20),
-      blurRadius: 4,
-      offset: const Offset(-2, -2),
-    ),
-  ],
-);
 
 
