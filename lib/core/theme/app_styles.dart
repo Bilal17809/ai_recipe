@@ -94,6 +94,13 @@ final BoxDecoration roundedDecoration = BoxDecoration(
   color: Colors.grey.shade100,
   borderRadius: BorderRadius.circular(35),
   border: Border.all(color: Colors.grey.shade300),
+  boxShadow: [
+    BoxShadow(
+      color: Colors.grey.withValues(alpha: 0.2),
+      blurRadius: 6,
+      offset: Offset(0, 2),
+    ),
+  ],
 );
 
 final BoxDecoration dictionaryContainerDecoration = BoxDecoration(

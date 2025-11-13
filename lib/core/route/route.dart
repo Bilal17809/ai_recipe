@@ -8,6 +8,8 @@ class Routes {
     switch (settings.name) {
       case RoutesName.home:
         return MaterialPageRoute(builder: (_) => const HomeView());
+      case RoutesName.splash:
+        // return MaterialPageRoute(builder: (_) => const );
       default:
         return MaterialPageRoute(
           builder: (_) {

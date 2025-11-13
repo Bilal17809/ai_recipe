@@ -1,5 +1,3 @@
-import 'package:flutter/cupertino.dart';
-@immutable
 class BaseState<T> {
   final bool isLoading;
   final String? errorMessage;

@@ -1,3 +1,5 @@
+import 'package:ai_recipe/pages/dashboard/view/dashboard_view.dart';
+
 import '/pages/home/view/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -12,9 +14,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Math Equations',
+      title: 'ai_recipe',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: const HomeView(),
+      home: const DashboardView(),
     );
   }
 }

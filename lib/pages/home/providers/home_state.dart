@@ -2,6 +2,7 @@ import '/core/common/common.dart';
 
 class HomeState extends BaseState<int> {
   final int counter;
+
   const HomeState({
     super.isLoading,
     super.errorMessage,
