@@ -8,6 +8,8 @@ const Color kWhite01 = Color(0x1AFFFFFF);
 const Color kBlack = Color(0xFF000000);
 const Color kBlack0D = Color(0xFF0D0D0D);
 
+const appColorDeepPurple = Colors.deepPurple;
+
 const appBarBgColor = Colors.white;
 const primaryColor = Color(0xFF35BEAE);
 const bgColor = Colors.white;

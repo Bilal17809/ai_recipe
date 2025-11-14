@@ -9,8 +9,7 @@ class DashBoardNotifier extends _$DashBoardNotifier{
   @override
   DashboardState build () => DashboardState();
 
-   void changeTab(int index){
-     state =  state.copyWith(changeTabIndex: index);
+   void changeTab(int index) {
+     state = state.copyWith(changeTabIndex: index);
    }
-
 }

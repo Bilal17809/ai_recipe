@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'dashboard_notifier.dart';
+part of 'recipes_notifiers.dart';
 
 // **************************************************************************
 // RiverpodGenerator
@@ -9,52 +9,52 @@ part of 'dashboard_notifier.dart';
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, type=warning
 
-@ProviderFor(DashBoardNotifier)
-const dashBoardProvider = DashBoardNotifierProvider._();
+@ProviderFor(RecipesNotifiers)
+const recipesNotifiersProvider = RecipesNotifiersProvider._();
 
-final class DashBoardNotifierProvider
-    extends $NotifierProvider<DashBoardNotifier, DashboardState> {
-  const DashBoardNotifierProvider._()
+final class RecipesNotifiersProvider
+    extends $NotifierProvider<RecipesNotifiers, RecipesState> {
+  const RecipesNotifiersProvider._()
     : super(
         from: null,
         argument: null,
         retry: null,
-        name: r'dashBoardProvider',
+        name: r'recipesNotifiersProvider',
         isAutoDispose: true,
         dependencies: null,
         $allTransitiveDependencies: null,
       );
 
   @override
-  String debugGetCreateSourceHash() => _$dashBoardNotifierHash();
+  String debugGetCreateSourceHash() => _$recipesNotifiersHash();
 
   @$internal
   @override
-  DashBoardNotifier create() => DashBoardNotifier();
+  RecipesNotifiers create() => RecipesNotifiers();
 
   /// {@macro riverpod.override_with_value}
-  Override overrideWithValue(DashboardState value) {
+  Override overrideWithValue(RecipesState value) {
     return $ProviderOverride(
       origin: this,
-      providerOverride: $SyncValueProvider<DashboardState>(value),
+      providerOverride: $SyncValueProvider<RecipesState>(value),
     );
   }
 }
 
-String _$dashBoardNotifierHash() => r'b657679f7a5d0046451ec2d7a646e1e22aea9c4e';
+String _$recipesNotifiersHash() => r'ddea283c1d157b21b4e4ddad41c175e9795e0f5f';
 
-abstract class _$DashBoardNotifier extends $Notifier<DashboardState> {
-  DashboardState build();
+abstract class _$RecipesNotifiers extends $Notifier<RecipesState> {
+  RecipesState build();
   @$mustCallSuper
   @override
   void runBuild() {
     final created = build();
-    final ref = this.ref as $Ref<DashboardState, DashboardState>;
+    final ref = this.ref as $Ref<RecipesState, RecipesState>;
     final element =
         ref.element
             as $ClassProviderElement<
-              AnyNotifier<DashboardState, DashboardState>,
-              DashboardState,
+              AnyNotifier<RecipesState, RecipesState>,
+              RecipesState,
               Object?,
               Object?
             >;

@@ -41,7 +41,7 @@ class ImportFrom extends StatelessWidget {
                     topLeft: Radius.circular(10),
                     topRight: Radius.circular(10),
                   ),
-                  child: Image.asset("images/kitchen.jpg", fit: BoxFit.cover),
+                  child: Image.asset("images/kitchen.jpg", fit: BoxFit.cover)
                 ),
               ),
               Positioned(

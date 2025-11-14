@@ -13,7 +13,9 @@ class HomeView extends ConsumerWidget {
     return Scaffold(
       backgroundColor: kWhiteF7,
       appBar: AppBar(
-        title: const Text('Recipe Import ', style: titleLargeStyle),
+        centerTitle: true,
+        backgroundColor: Colors.deepPurple,
+        title:  Text('Recipe Import ', style: titleLargeStyle.copyWith(color: kWhite),),
       ),
       body: Consumer(
         builder: (context, ref, child) {
@@ -48,18 +50,6 @@ class HomeView extends ConsumerWidget {
                           Text("Recommended for You",style: titleLargeStyle.copyWith(fontWeight: FontWeight.w800),)
                         ],
                       )
-                      // Text(state.errorMessage ?? 'No message yet'),
-                      // const SizedBox(height: 16),
-                      // Text('Counter: ${state.counter}', style: const TextStyle(fontSize: 24)),
-                      // const SizedBox(height: 16),
-                      // ElevatedButton(
-                      //   onPressed: (){},
-                      //   child: const Text('Increment'),
-                      // ),
-                      // ElevatedButton(
-                      //   onPressed: (){},
-                      //   child: const Text('Load Message'),
-                      // ),
                     ],
                   ),
                 );
