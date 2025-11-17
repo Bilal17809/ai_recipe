@@ -11,8 +11,8 @@ class SearchRecipes extends StatelessWidget {
       children: [
         Flexible(
           child: CustomTextFormField(
-            hintText: "Search",
-            hintStyle: titleSmallStyle.copyWith(color: Colors.grey),
+            hintText: "Search recipe",
+            hintStyle: bodyLargeStyle.copyWith(color: Colors.grey),
             prefixIcon: Icon(Icons.search, color: Colors.grey),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),

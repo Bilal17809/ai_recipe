@@ -1,3 +1,4 @@
+import 'package:ai_recipe/core/common/positioned.dart';
 import 'package:ai_recipe/core/theme/app_colors.dart';
 import 'package:ai_recipe/core/theme/app_styles.dart';
 import 'package:flutter/material.dart';
@@ -44,10 +45,11 @@ class ImportFrom extends StatelessWidget {
                   child: Image.asset("images/kitchen.jpg", fit: BoxFit.cover)
                 ),
               ),
+              Position(),
               Positioned(
                 top: 0,
                 left: 16,
-                bottom: 30,
+                bottom: 10,
                 child: Align(
                   alignment: Alignment.bottomLeft,
                   child: Text(

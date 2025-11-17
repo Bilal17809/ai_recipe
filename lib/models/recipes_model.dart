@@ -1,6 +1,4 @@
-
-
-class RecipesModel{
+class RecipesModel {
   final String? title;
   final String? cokeTime;
   final int? people;
@@ -8,11 +6,12 @@ class RecipesModel{
   final String? aboutMoreCoking;
   final String? imageUrl;
 
-  RecipesModel({required  this.title,
+  RecipesModel({
+    required this.title,
     required this.cokeTime,
     required this.people,
     required this.cokeName,
- this.aboutMoreCoking,
+    this.aboutMoreCoking,
     this.imageUrl,
   });
 }

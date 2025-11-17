@@ -1,13 +1,14 @@
+import 'package:ai_recipe/models/models.dart';
+
 import '/core/common/common.dart';
 
 class HomeState extends BaseState<int> {
-  final int counter;
-
+final List<RecipesModel> recipesList;
   const HomeState({
     super.isLoading,
     super.errorMessage,
     super.data,
-    this.counter = 0,
+    this.recipesList = const []
   });
 
   @override
@@ -16,12 +17,13 @@ class HomeState extends BaseState<int> {
     String? errorMessage,
     int? data,
     int? counter,
+    List<RecipesModel>? recipesList
   }) {
     return HomeState(
       isLoading: isLoading ?? this.isLoading,
       errorMessage: errorMessage ?? this.errorMessage,
       data: data ?? this.data,
-      counter: counter ?? this.counter,
+      recipesList: recipesList ?? this.recipesList
     );
   }
 }

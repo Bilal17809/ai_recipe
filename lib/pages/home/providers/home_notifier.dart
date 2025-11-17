@@ -1,26 +1,29 @@
+import 'package:ai_recipe/pages/recipes/providers/recipes_notifiers.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'home_state.dart';
 part 'home_notifier.g.dart';
 
 @riverpod
 class HomeNotifier extends _$HomeNotifier {
-
   @override
-  HomeState build() => const HomeState();
-
-
-
-
-  // void increment() {
-  //   state = state.copyWith(counter: state.counter + 1);
-  // }
+  HomeState build() {
+    // final recipes = ref.watch(recipesNotifiersProvider).recipesList;
+    //  Future.microtask(()=>loadRecipes());
+    return HomeState();
+  }
   //
-  // Future<void> loadMessage() async {
-  //   state = state.copyWith(isLoading: true);
-  //   await Future.delayed(const Duration(seconds: 2));
-  //   state = state.copyWith(
-  //     isLoading: false,
-  //     errorMessage: "Welcome to Riverpod Advanced (No Equatable)!",
-  //   );
+  //
+  // Future<void> loadRecipes() async {
+  //   try {
+  //     state = state.copyWith(isLoading: true);
+  //     final recipeList = ref.watch(recipesNotifiersProvider).recipesList;
+  //   await  Future.delayed(Duration(seconds: 1));
+  //     if(recipeList.isNotEmpty){
+  //       state = state.copyWith(recipesList: recipeList, isLoading: false);
+  //     }
+  //
+  //   } catch (e) {
+  //     state = state.copyWith(isLoading: false, errorMessage: e.toString());
+  //   }
   // }
 }

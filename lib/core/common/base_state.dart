@@ -5,7 +5,7 @@ class BaseState<T> {
 
   const BaseState({
     this.isLoading = false,
-    this.errorMessage,
+    this.errorMessage = "Recipes not available",
     this.data,
   });
 

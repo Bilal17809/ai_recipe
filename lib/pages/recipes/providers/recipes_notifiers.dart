@@ -8,13 +8,16 @@ class RecipesNotifiers extends _$RecipesNotifiers {
 
   @override
   RecipesState build() {
-   Future.microtask(() => _loadRecipes());
+    _loadRecipes();
     return RecipesState(
+      recipesList: [],
+      isLoading: true,
+
     );
   }
 
   Future<void> _loadRecipes() async {
-    state = state.copyWith(isLoading:  true);
+    // state = state.copyWith(isLoading:  true);
     await Future.delayed(const Duration(seconds: 1));
     state = state.copyWith(
       recipesList: [
@@ -30,6 +33,27 @@ class RecipesNotifiers extends _$RecipesNotifiers {
           cokeTime: "50 min",
           people: 8,
           cokeName: "Hamza",
+          aboutMoreCoking: "kg chicken, tbps kali mirch, salt to taste, Temater, Bari hari, lemmon",
+        ),
+        RecipesModel(
+          title: "Quick and Easy Tomato Soup for winters",
+          cokeTime: "30 min",
+          people: 4,
+          cokeName: "Izhar Badshah",
+          aboutMoreCoking: "kg chicken, tbps kali mirch, salt to taste, Temater, Bari hari, lemmon",
+        ),
+        RecipesModel(
+          title: "Quick and Easy Tomato Soup for winters",
+          cokeTime: "30 min",
+          people: 4,
+          cokeName: "Izhar Badshah",
+          aboutMoreCoking: "kg chicken, tbps kali mirch, salt to taste, Temater, Bari hari, lemmon",
+        ),
+        RecipesModel(
+          title: "Quick and Easy Tomato Soup for winters",
+          cokeTime: "30 min",
+          people: 4,
+          cokeName: "Izhar Badshah",
           aboutMoreCoking: "kg chicken, tbps kali mirch, salt to taste, Temater, Bari hari, lemmon",
         ),
         RecipesModel(

@@ -1,9 +1,9 @@
 import 'package:ai_recipe/core/theme/app_colors.dart';
 import 'package:ai_recipe/core/theme/app_styles.dart';
+import 'package:ai_recipe/pages/home/widgets/grid_list.dart';
 import 'package:ai_recipe/pages/home/widgets/import_from.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../providers/home_notifier.dart';
 
 class HomeView extends ConsumerWidget {
   const HomeView({super.key});
@@ -15,41 +15,61 @@ class HomeView extends ConsumerWidget {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.deepPurple,
-        title:  Text('Recipe Import ', style: titleLargeStyle.copyWith(color: kWhite),),
+        title: Text(
+          'Recipe Import ',
+          style: titleLargeStyle.copyWith(color: kWhite),
+        ),
       ),
       body: Consumer(
         builder: (context, ref, child) {
-          final state = ref.watch(homeProvider);
-          final notifier = ref.read(homeProvider.notifier);
-          return state.isLoading
-              ? Center(child: const CircularProgressIndicator())
-              : Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 20,
-                    vertical: 10,
-                  ),
+         return SingleChildScrollView(
+                  padding: EdgeInsets.symmetric(horizontal: 18, vertical: 18),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          _CommonButton(icon: Icons.mic,onTap: (){print("Tap onMic");},),
-                          SizedBox(width: 06),
-                          _CommonButton(icon: Icons.camera_alt_outlined,onTap: (){print("Tap onCamera");},),
+                          SizedBox(),
+                          // Text("Import from gallery",style: bodyLargeStyle.copyWith(fontWeight: FontWeight.bold,fontSize: 18),),
+                          Row(
+                            // mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              _CommonButton(
+                                icon: Icons.mic,
+                                onTap: () {
+                                  print("Tap onMic");
+                                },
+                              ),
+                              SizedBox(width: 06),
+                              _CommonButton(
+                                icon: Icons.camera_alt_outlined,
+                                onTap: () {
+                                  print("Tap onCamera");
+                                },
+                              ),
+                            ],
+                          ),
                         ],
                       ),
-                      SizedBox(height: 16),
+                      SizedBox(height: 10),
                       ImportFrom(),
                       SizedBox(height: 16),
                       Row(
                         children: [
-                          Icon(Icons.light_outlined,color: Colors.deepPurple,),
+                          Icon(Icons.light_outlined, color: Colors.deepPurple),
                           SizedBox(width: 10),
-                          Text("Recommended for You",style: titleLargeStyle.copyWith(fontWeight: FontWeight.w800),)
+                          Text(
+                            "Recommended for You",
+                            style: titleLargeStyle.copyWith(
+                              fontWeight: FontWeight.w800,
+                            ),
+                          ),
                         ],
-                      )
+                      ),
+                      SizedBox(height: 08),
+                      GridList(),
                     ],
                   ),
                 );
