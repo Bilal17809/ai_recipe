@@ -1,7 +1,11 @@
+import 'package:ai_recipe/core/Utility/Utils.dart';
 import 'package:ai_recipe/core/theme/app_colors.dart';
 import 'package:ai_recipe/core/theme/app_styles.dart';
 import 'package:ai_recipe/pages/home/widgets/grid_list.dart';
 import 'package:ai_recipe/pages/home/widgets/import_from.dart';
+import 'package:ai_recipe/pages/home/widgets/photo_import_sheet.dart';
+import 'package:ai_recipe/pages/home/widgets/text_import_sheet.dart';
+import 'package:ai_recipe/pages/home/widgets/voice_import_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -31,22 +35,45 @@ class HomeView extends ConsumerWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          SizedBox(),
-                          // Text("Import from gallery",style: bodyLargeStyle.copyWith(fontWeight: FontWeight.bold,fontSize: 18),),
+                         Flexible(
+                           child: Container(
+                             width: double.infinity,
+                             padding: EdgeInsets.all(10),
+                             decoration: roundedDecoration.copyWith(color: kBlack,borderRadius: BorderRadius.circular(10)),
+                             child: Row(
+                               mainAxisAlignment: MainAxisAlignment.center,
+                               children: [
+                                 Icon(Icons.webhook_sharp,color: kWhite,size: 20,),
+                                 SizedBox(width: 10),
+                                 Text("From website",style: titleSmallStyle.copyWith(color: kWhite,fontSize: 14),)
+                               ],
+                             ),
+                           ),
+                         ),
+                          SizedBox(width: 10),
                           Row(
                             // mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               _CommonButton(
                                 icon: Icons.mic,
                                 onTap: () {
-                                  print("Tap onMic");
+                                  Utils.show(context, VoiceImportSheet());
                                 },
                               ),
                               SizedBox(width: 06),
                               _CommonButton(
                                 icon: Icons.camera_alt_outlined,
                                 onTap: () {
-                                  print("Tap onCamera");
+                                  Utils.show(context, PhotoImportSheet(onUploadTap: (){
+
+                                  }));
+                                },
+                              ),
+                              SizedBox(width: 06),
+                              _CommonButton(
+                                icon: Icons.edit,
+                                onTap: () {
+                                  Utils.show(context, TextImportSheet());
                                 },
                               ),
                             ],

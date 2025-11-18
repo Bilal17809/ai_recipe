@@ -3,7 +3,9 @@ import 'package:ai_recipe/core/theme/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class ShowDetail extends StatelessWidget {
-  const ShowDetail({super.key});
+  final String? peopleServe;
+  final String? totalTime;
+  const ShowDetail({super.key, this.peopleServe, this.totalTime});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +13,7 @@ class ShowDetail extends StatelessWidget {
       children: [
         Container(
           height: 1,
-          decoration: BoxDecoration(color: kBlack.withAlpha(20)),
+          decoration: BoxDecoration(color: kBlack.withAlpha(10)),
         ),
 
         IntrinsicHeight(
@@ -24,7 +26,7 @@ class ShowDetail extends StatelessWidget {
               ShowAboutData(
                 icons: Icons.people_alt_outlined,
                 title: "serves",
-                subTitle: "4",
+                subTitle: peopleServe,
               ),
 
               VerticalDivide(),
@@ -32,7 +34,7 @@ class ShowDetail extends StatelessWidget {
               ShowAboutData(
                 icons: Icons.access_time_outlined,
                 title: "Total Time",
-                subTitle: "30m",
+                subTitle: totalTime,
               ),
             ],
           ),
@@ -40,7 +42,7 @@ class ShowDetail extends StatelessWidget {
 
         Container(
           height: 1,
-          decoration: BoxDecoration(color: kBlack.withAlpha(20)),
+          decoration: BoxDecoration(color: kBlack.withAlpha(10)),
         ),
       ],
     );
@@ -55,7 +57,7 @@ class VerticalDivide extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 02),
       child: VerticalDivider(
-        color: kBlack.withAlpha(30),
+        color: kBlack.withAlpha(10),
         thickness: 1,
         width: 20,
       ),

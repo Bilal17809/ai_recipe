@@ -41,7 +41,7 @@ final class RecipesNotifiersProvider
   }
 }
 
-String _$recipesNotifiersHash() => r'ddea283c1d157b21b4e4ddad41c175e9795e0f5f';
+String _$recipesNotifiersHash() => r'eeb860b2c98d65dd22866158b1b37caf7cef6814';
 
 abstract class _$RecipesNotifiers extends $Notifier<RecipesState> {
   RecipesState build();

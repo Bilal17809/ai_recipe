@@ -1,6 +1,7 @@
 import 'package:ai_recipe/pages/dashboard/view/dashboard_view.dart';
 import 'package:ai_recipe/pages/items_detail/view/show_items_view.dart';
 import 'package:flutter/material.dart';
+import '../../models/recipes_model.dart';
 import '../../pages/home/view/home_view.dart';
 import '/core/route/route_name.dart';
 
@@ -13,7 +14,8 @@ class Routes {
       case RoutesName.splash:
         // return MaterialPageRoute(builder: (_) => const );
       case RoutesName.itemsView:
-        return MaterialPageRoute(builder: (_) => ShowItemsView());
+      final recipe = arguments as RecipesModel;
+        return MaterialPageRoute(builder: (_) => ShowItemsView(recipes:recipe));
       default:
         return MaterialPageRoute(
           builder: (_) {

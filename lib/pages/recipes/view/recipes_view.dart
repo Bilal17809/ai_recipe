@@ -66,7 +66,11 @@ class RecipesView extends ConsumerWidget {
                         final recipe = recipesState.recipesList[index - 1];
                         return GestureDetector(
                           onTap: () {
-                            Navigator.pushNamed(context, RoutesName.itemsView);
+                            Navigator.pushNamed(
+                              context,
+                              RoutesName.itemsView,
+                              arguments: recipe,
+                            );
                           },
                           child: Recipes(recipesList: recipe),
                         );

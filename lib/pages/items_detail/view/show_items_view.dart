@@ -13,7 +13,12 @@ class ShowItemsView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: AppBar(title: Text("Data")),
+      backgroundColor: kWhiteF7,
+      appBar: AppBar(title: Text(recipes!.title.toString(),
+        style:titleMediumStyle.copyWith(color: kWhite),),
+        backgroundColor: appColorDeepPurple,
+        iconTheme: IconThemeData(color: kWhite),
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 20),
         child: Column(
@@ -42,21 +47,32 @@ class ShowItemsView extends ConsumerWidget {
             ),
             SizedBox(height: 06),
             Text(
-              "Quick and Easy Tomato Soup for Winters",
+              recipes!.title.toString(),
               style: titleMediumStyle.copyWith(fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 06),
-            Text("Izhar Badshah",style: bodyLargeStyle.copyWith(color: Colors.grey),),
+            // Text(
+            //   recipes!.cokeName.toString(),
+            //   style: bodyLargeStyle.copyWith(color: Colors.grey),
+            // ),
             SizedBox(height: 10),
             Container(
               padding: EdgeInsets.all(12),
               decoration: BoxDecoration(
-                  color: kBlack.withAlpha(20),borderRadius: BorderRadius.circular(10)
+                color: kBlack.withAlpha(20),
+                borderRadius: BorderRadius.circular(10),
               ),
-              child: Text("asqgdjqhwDFJGAHDGHJGHDHMASHSAHAJSHHJGDJGJHGJAGHHDGDGHDGAHSHDJSDDHAGASJHSAGJ"),
+              child: Text(recipes!.aboutMoreCoking.toString()),
             ),
             SizedBox(height: 20),
-            ShowDetail()
+            ShowDetail(
+              peopleServe: recipes!.people.toString(),
+              totalTime: recipes!.cokeTime,
+            ),
+            SizedBox(height: 26),
+            Text("Ingredients",style: titleLargeStyle,),
+            Text("Instructions",style: titleLargeStyle)
+            
           ],
         ),
       ),

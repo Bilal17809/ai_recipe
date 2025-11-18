@@ -1,0 +1,1 @@
+enum ImportMode { camera, upload }
