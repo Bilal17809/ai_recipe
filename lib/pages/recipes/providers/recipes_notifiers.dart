@@ -17,7 +17,6 @@ class RecipesNotifiers extends _$RecipesNotifiers {
   }
 
   Future<void> _loadRecipes() async {
-    // state = state.copyWith(isLoading:  true);
     await Future.delayed(const Duration(seconds: 1));
     state = state.copyWith(
       recipesList: [

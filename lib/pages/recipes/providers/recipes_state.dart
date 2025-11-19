@@ -1,5 +1,3 @@
-
-
 import 'package:ai_recipe/core/common/base_state.dart';
 import 'package:ai_recipe/models/models.dart';
 

@@ -1,6 +1,6 @@
-import 'package:ai_recipe/core/common/common.dart';
 import 'package:ai_recipe/core/theme/app_styles.dart';
 import 'package:flutter/material.dart';
+import '/core/common/input_text_field.dart';
 
 class SearchRecipes extends StatelessWidget {
   const SearchRecipes({super.key});
