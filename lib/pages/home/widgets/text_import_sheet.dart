@@ -1,6 +1,6 @@
-import 'package:ai_recipe/core/common/common.dart';
 import 'package:ai_recipe/core/theme/theme.dart';
 import 'package:flutter/material.dart';
+import '/core/common/input_text_field.dart';
 import '/core/common/bottomshet_header.dart';
 
 class TextImportSheet extends StatelessWidget {
@@ -27,7 +27,6 @@ class TextImportSheet extends StatelessWidget {
             const SizedBox(height: 20),
             CustomTextFormField(
               hintText: "Enter your recipe...",
-
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide: BorderSide(color: Colors.grey),

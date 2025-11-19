@@ -10,10 +10,6 @@ class HomeNotifier extends _$HomeNotifier {
   HomeState build() {
     return HomeState();
   }
-
-
-
-
   void selectedCamera(){
     state = state.copyWith(mode: ImportMode.camera);
     if (state.isInitialized == true) return;
@@ -60,25 +56,8 @@ class HomeNotifier extends _$HomeNotifier {
     }
   }
 
-  @override
   void dispose() {
     state.camController?.dispose();
     
   }
-
-  //
-  //
-  // Future<void> loadRecipes() async {
-  //   try {
-  //     state = state.copyWith(isLoading: true);
-  //     final recipeList = ref.watch(recipesNotifiersProvider).recipesList;
-  //   await  Future.delayed(Duration(seconds: 1));
-  //     if(recipeList.isNotEmpty){
-  //       state = state.copyWith(recipesList: recipeList, isLoading: false);
-  //     }
-  //
-  //   } catch (e) {
-  //     state = state.copyWith(isLoading: false, errorMessage: e.toString());
-  //   }
-  // }
 }

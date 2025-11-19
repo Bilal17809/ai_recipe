@@ -6,7 +6,8 @@ class BottomSheetsHeader extends StatelessWidget {
   final String title;
   final IconData? icon;
   final String? subTitle;
-  const BottomSheetsHeader({required this.title, this.icon, this.subTitle});
+  const BottomSheetsHeader({super.key,
+    required this.title, this.icon, this.subTitle});
 
   @override
   Widget build(BuildContext context) {

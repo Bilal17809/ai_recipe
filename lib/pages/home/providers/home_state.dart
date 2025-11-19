@@ -5,7 +5,6 @@ import '../../../core/common/enums/import_mode.dart';
 import '/core/common/common.dart';
 
 class HomeState extends BaseState<int> {
-
   final List<RecipesModel> recipesList;
   final ImportMode mode;
   final CameraController? camController;
