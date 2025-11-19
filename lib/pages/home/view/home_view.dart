@@ -1,41 +1,127 @@
+import 'package:ai_recipe/core/Utility/Utils.dart';
+import 'package:ai_recipe/core/theme/app_colors.dart';
+import 'package:ai_recipe/core/theme/app_styles.dart';
+import 'package:ai_recipe/pages/home/widgets/grid_list.dart';
+import 'package:ai_recipe/pages/home/widgets/import_from.dart';
+import 'package:ai_recipe/pages/home/widgets/photo_import_sheet.dart';
+import 'package:ai_recipe/pages/home/widgets/text_import_sheet.dart';
+import 'package:ai_recipe/pages/home/widgets/voice_import_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../main_appbar/main_appbar.dart';
-import '../providers/home_notifier.dart';
 
 class HomeView extends ConsumerWidget {
   const HomeView({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(homeProvider);
-    final notifier = ref.read(homeProvider.notifier);
-
     return Scaffold(
-      appBar: MainAppBar(
-        title: 'Select Recipes',
-        isCenter: true,
-      ),
-      body: Center(
-        child: state.isLoading
-            ? const CircularProgressIndicator()
-            : Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(state.errorMessage ?? 'No message yet'),
-            const SizedBox(height: 16),
-            Text('Counter: ${state.counter}', style: const TextStyle(fontSize: 24)),
-            const SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: notifier.increment,
-              child: const Text('Increment'),
-            ),
-            ElevatedButton(
-              onPressed: notifier.loadMessage,
-              child: const Text('Load Message'),
-            ),
-          ],
+      backgroundColor: kWhiteF7,
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.deepPurple,
+        title: Text(
+          'Recipe Import ',
+          style: titleLargeStyle.copyWith(color: kWhite),
         ),
+      ),
+      body: Consumer(
+        builder: (context, ref, child) {
+         return SingleChildScrollView(
+                  padding: EdgeInsets.symmetric(horizontal: 18, vertical: 18),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                         Flexible(
+                           child: Container(
+                             width: double.infinity,
+                             padding: EdgeInsets.all(10),
+                             decoration: roundedDecoration.copyWith(color: kBlack,borderRadius: BorderRadius.circular(10)),
+                             child: Row(
+                               mainAxisAlignment: MainAxisAlignment.center,
+                               children: [
+                                 Icon(Icons.webhook_sharp,color: kWhite,size: 20,),
+                                 SizedBox(width: 10),
+                                 Text("From website",style: titleSmallStyle.copyWith(color: kWhite,fontSize: 14),)
+                               ],
+                             ),
+                           ),
+                         ),
+                          SizedBox(width: 10),
+                          Row(
+                            // mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              _CommonButton(
+                                icon: Icons.mic,
+                                onTap: () {
+                                  Utils.show(context, VoiceImportSheet());
+                                },
+                              ),
+                              SizedBox(width: 06),
+                              _CommonButton(
+                                icon: Icons.camera_alt_outlined,
+                                onTap: () {
+                                  Utils.show(context, PhotoImportSheet(onUploadTap: (){
+
+                                  }));
+                                },
+                              ),
+                              SizedBox(width: 06),
+                              _CommonButton(
+                                icon: Icons.edit,
+                                onTap: () {
+                                  Utils.show(context, TextImportSheet());
+                                },
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 10),
+                      ImportFrom(),
+                      SizedBox(height: 16),
+                      Row(
+                        children: [
+                          Icon(Icons.light_outlined, color: Colors.deepPurple),
+                          SizedBox(width: 10),
+                          Text(
+                            "Recommended for You",
+                            style: titleLargeStyle.copyWith(
+                              fontWeight: FontWeight.w800,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 08),
+                      GridList(),
+                    ],
+                  ),
+                );
+        },
+      ),
+    );
+  }
+}
+
+class _CommonButton extends StatelessWidget {
+  final IconData? icon;
+  final VoidCallback? onTap;
+  const _CommonButton({super.key, this.icon, this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.all(10),
+        decoration: roundedDecoration.copyWith(
+          color: kBlack,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Icon(icon, color: kWhite, size: 20),
       ),
     );
   }

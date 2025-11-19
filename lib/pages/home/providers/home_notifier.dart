@@ -1,3 +1,5 @@
+import 'package:ai_recipe/core/common/enums/import_mode.dart';
+import 'package:camera/camera.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'home_state.dart';
 part 'home_notifier.g.dart';
@@ -5,18 +7,78 @@ part 'home_notifier.g.dart';
 @riverpod
 class HomeNotifier extends _$HomeNotifier {
   @override
-  HomeState build() => const HomeState();
-
-  void increment() {
-    state = state.copyWith(counter: state.counter + 1);
+  HomeState build() {
+    return HomeState();
   }
 
-  Future<void> loadMessage() async {
-    state = state.copyWith(isLoading: true);
-    await Future.delayed(const Duration(seconds: 2));
+
+
+
+  void selectedCamera(){
+    state = state.copyWith(mode: ImportMode.camera);
+    if (state.isInitialized == true) return;
+    initializeCamera();
+  }
+
+  void selectUpload(){
+    state.camController?.dispose();
     state = state.copyWith(
-      isLoading: false,
-      errorMessage: "Welcome to Riverpod Advanced (No Equatable)!",
+      mode: ImportMode.upload,
+      camController: null,
+      isInitialized: false,
     );
   }
+
+
+  Future<void> initializeCamera() async {
+    try {
+      state = state.copyWith(isLoading: true);
+      final cameras = await availableCameras();
+      if (cameras.isEmpty) {
+        state = state.copyWith(
+          isLoading: false,
+          errorMessage: "No camera found",
+        );
+        return;
+      }
+      final controller = CameraController(
+        cameras.first,
+        ResolutionPreset.medium,
+        enableAudio: false,
+      );
+      await controller.initialize();
+      state = state.copyWith(
+        camController: controller,
+        isInitialized: true,
+        isLoading: false,
+      );
+    } catch (e) {
+      state = state.copyWith(
+        isLoading: false,
+        errorMessage: e.toString(),
+      );
+    }
+  }
+
+  @override
+  void dispose() {
+    state.camController?.dispose();
+    
+  }
+
+  //
+  //
+  // Future<void> loadRecipes() async {
+  //   try {
+  //     state = state.copyWith(isLoading: true);
+  //     final recipeList = ref.watch(recipesNotifiersProvider).recipesList;
+  //   await  Future.delayed(Duration(seconds: 1));
+  //     if(recipeList.isNotEmpty){
+  //       state = state.copyWith(recipesList: recipeList, isLoading: false);
+  //     }
+  //
+  //   } catch (e) {
+  //     state = state.copyWith(isLoading: false, errorMessage: e.toString());
+  //   }
+  // }
 }

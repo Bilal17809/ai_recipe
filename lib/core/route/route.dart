@@ -1,9 +1,8 @@
-import 'package:ai_recipe/pages/recipes/view/recipes_view.dart';
-import 'package:ai_recipe/pages/setting/view/setting_view.dart';
-
-import '/pages/dash_board/view/dash_board_view.dart';
+import 'package:ai_recipe/pages/dashboard/view/dashboard_view.dart';
+import 'package:ai_recipe/pages/items_detail/view/show_items_view.dart';
 import 'package:flutter/material.dart';
-import '/pages/home/view/home_view.dart';
+import '../../models/recipes_model.dart';
+import '../../pages/home/view/home_view.dart';
 import '/core/route/route_name.dart';
 
 class Routes {
@@ -11,13 +10,12 @@ class Routes {
     final arguments = settings.arguments;
     switch (settings.name) {
       case RoutesName.home:
-        return MaterialPageRoute(builder: (_) => const HomeView());
-      case RoutesName.dashBoard:
-        return MaterialPageRoute(builder: (_) => const DashBoardView());
-      case RoutesName.recipes:
-        return MaterialPageRoute(builder: (_) => const RecipesView());
-      case RoutesName.setting:
-        return MaterialPageRoute(builder: (_) => const SettingView());
+        return MaterialPageRoute(builder: (_) => const DashboardView());
+      case RoutesName.splash:
+        // return MaterialPageRoute(builder: (_) => const );
+      case RoutesName.itemsView:
+      final recipe = arguments as RecipesModel;
+        return MaterialPageRoute(builder: (_) => ShowItemsView(recipes:recipe));
       default:
         return MaterialPageRoute(
           builder: (_) {
