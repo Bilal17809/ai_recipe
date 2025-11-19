@@ -1,6 +1,7 @@
 import 'package:ai_recipe/core/theme/app_styles.dart';
 import 'package:ai_recipe/pages/home/view/home_view.dart';
 import 'package:ai_recipe/pages/recipes/view/recipes_view.dart';
+import 'package:ai_recipe/pages/setting/view/setting_view.dart';
 import 'package:ai_recipe/pages/your_collection/view/collections_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -15,7 +16,7 @@ class DashboardView extends ConsumerWidget {
     final pages = [
       HomeView(),
       RecipesView(),
-      const Center(child: Text('🧑‍🍳 Ai Recipes')),
+      SettingView(),
       CollectionsView()
     ];
 

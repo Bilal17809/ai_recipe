@@ -1,5 +1,6 @@
 import 'package:ai_recipe/core/theme/app_colors.dart';
 import 'package:ai_recipe/core/theme/app_styles.dart';
+import 'package:ai_recipe/extension/decoration_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:ai_recipe/models/models.dart';
 import '/core/common/positioned.dart';
@@ -15,7 +16,7 @@ class Recipes extends StatelessWidget {
     return Container(
       width: double.infinity,
       margin: const EdgeInsets.only(bottom: 12),
-      decoration: roundedDecoration.copyWith(
+      decoration: context.roundedDecorationWithShadow.copyWith(
         borderRadius: BorderRadius.circular(10)
       ),
       child: Row(

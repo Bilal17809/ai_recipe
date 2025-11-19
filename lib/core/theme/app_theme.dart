@@ -58,7 +58,7 @@ abstract class AppTheme {
   static final ThemeData themeData = ThemeData(
     fontFamily: fontFamily,
     scaffoldBackgroundColor: bgColor,
-    textTheme: const TextTheme(
+    textTheme:  TextTheme(
       headlineSmall: headlineSmallStyle,
       headlineMedium: headlineMediumStyle,
       titleLarge: titleLargeStyle,

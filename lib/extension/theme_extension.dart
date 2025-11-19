@@ -16,15 +16,9 @@ extension ContextExtension on BuildContext {
   Color get shimmerColor => isDarkTheme ? Colors.grey.shade800 : Colors.grey.shade300;
 
   Color get textPrimary => isDarkTheme ? Colors.white : kBlack;
-
-  Color get textSecondary =>
-      isDarkTheme ? Colors.white70 : Colors.grey;
-
-  Color get dividerColor =>
-      isDarkTheme ? Colors.white24 : greyBorderColor;
-
-  Color get iconColor =>
-      isDarkTheme ? Colors.white : Colors.black54;
+  Color get textSecondary => isDarkTheme ? Colors.white70 : Colors.grey;
+  Color get dividerColor => isDarkTheme ? Colors.white24 : greyBorderColor;
+  Color get iconColor => isDarkTheme ? Colors.white : Colors.black54;
 }
 
 

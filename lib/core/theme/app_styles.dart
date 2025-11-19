@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import '../constant/constant.dart';
 import 'app_colors.dart';
 
+// bool get isDark => Theme.of(this).brightness == Brightness.dark;
+
 const TextStyle headlineMediumStyle = TextStyle(
   fontFamily: fontFamily,
   fontSize: 30,

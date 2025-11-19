@@ -29,9 +29,9 @@ class MyApp extends ConsumerWidget {
       themeMode: themeState.themeMode,
       theme: ThemeData.light(useMaterial3: true),
       darkTheme: ThemeData.dark(useMaterial3: true),
-      home: DashBoardView(),
-      // initialRoute: RoutesName.home,
-      // onGenerateRoute: Routes.generateRoute,
+      // home: DashBoardView(),
+      initialRoute: RoutesName.home,
+      onGenerateRoute: Routes.generateRoute,
     );
   }
 }

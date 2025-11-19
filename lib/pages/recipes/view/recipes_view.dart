@@ -1,5 +1,6 @@
 import 'package:ai_recipe/core/common/loading.dart';
 import 'package:ai_recipe/core/route/route_name.dart';
+import 'package:ai_recipe/extension/extension.dart';
 import 'package:ai_recipe/pages/recipes/widgets/recipes.dart';
 import 'package:ai_recipe/pages/recipes/widgets/search_recipes.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ class RecipesView extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      backgroundColor: kWhiteF7,
+      backgroundColor: context.bgColor,
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: appColorDeepPurple,
