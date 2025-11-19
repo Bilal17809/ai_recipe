@@ -15,4 +15,31 @@ class Utils {
     );
   }
 
+  static Future<bool?> showCustomDialog({
+    required BuildContext context,
+    required String title,
+    required String message,
+    String okText = "OK",
+    String noText = "No",
+  }) {
+    return showDialog<bool>(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => AlertDialog(
+        title: Text(title),
+        content: Text(message),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: Text(noText),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.of(context).pop(true),
+            child: Text(okText),
+          ),
+        ],
+      ),
+    );
+  }
+
 }

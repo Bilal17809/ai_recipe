@@ -7,7 +7,6 @@ import '../theme/app_styles.dart';
 class ShowLoading extends StatelessWidget {
   final String? title;
   const ShowLoading({super.key,this.title});
-
   @override
   Widget build(BuildContext context) {
     return  Column(
@@ -21,6 +20,33 @@ class ShowLoading extends StatelessWidget {
         Text(
           title ?? "Loading...",
           style: titleSmallStyle,
+        ),
+      ],
+    );
+  }
+}
+
+
+class ImageUploadLoading extends StatelessWidget {
+  const ImageUploadLoading({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        SizedBox(
+          height: 18,
+          width: 18,
+          child: CircularProgressIndicator(
+            color: kWhite,
+            strokeWidth: 2,
+          ),
+        ),
+        SizedBox(width: 12),
+        Text(
+          "Please wait...",
+          style: bodyMediumStyle.copyWith(color: kWhite),
         ),
       ],
     );

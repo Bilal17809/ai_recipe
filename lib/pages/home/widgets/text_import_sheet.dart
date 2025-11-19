@@ -1,4 +1,5 @@
 import 'package:ai_recipe/core/common/common.dart';
+import 'package:ai_recipe/core/common/common_button.dart';
 import 'package:ai_recipe/core/theme/theme.dart';
 import 'package:flutter/material.dart';
 import '/core/common/bottomshet_header.dart';
@@ -27,7 +28,7 @@ class TextImportSheet extends StatelessWidget {
             const SizedBox(height: 20),
             CustomTextFormField(
               hintText: "Enter your recipe...",
-
+              hintStyle: bodyMediumStyle.copyWith(color: Colors.grey),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide: BorderSide(color: Colors.grey),
@@ -52,7 +53,7 @@ class TextImportSheet extends StatelessWidget {
               decoration: BoxDecoration(color: kBlack.withAlpha(20)),
             ),
             const SizedBox(height: 14),
-            _ImportButton(),
+           CommonButton(text: "Import recipe")
           ],
         ),
       ),
@@ -88,26 +89,6 @@ class _TipsBox extends StatelessWidget {
           _TextTitle(title: "Add prep/cook times and serving size"),
           // Text("• Add prep/cook times and serving size"),
         ],
-      ),
-    );
-  }
-}
-
-class _ImportButton extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(10),
-      decoration: BoxDecoration(
-        color: appColorDeepPurple,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: const Center(
-        child: Text(
-          "Import Recipe",
-          style: TextStyle(color: Colors.white, fontSize: 16),
-        ),
       ),
     );
   }

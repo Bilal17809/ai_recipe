@@ -1,15 +1,13 @@
+import 'dart:io';
 import 'package:ai_recipe/models/models.dart';
-import 'package:camera/camera.dart';
-
-import '../../../core/common/enums/import_mode.dart';
+import '/core/common/enums/import_mode.dart';
 import '/core/common/common.dart';
 
 class HomeState extends BaseState<int> {
 
   final List<RecipesModel> recipesList;
   final ImportMode mode;
-  final CameraController? camController;
-  final bool? isInitialized;
+  final File? selectedImage;
 
   const HomeState({
     super.isLoading,
@@ -17,8 +15,7 @@ class HomeState extends BaseState<int> {
     super.data,
     this.recipesList = const [],
     this.mode = ImportMode.camera,
-    this.camController,
-    this.isInitialized,
+    this.selectedImage,
   });
 
   @override
@@ -29,8 +26,7 @@ class HomeState extends BaseState<int> {
     int? counter,
     List<RecipesModel>? recipesList,
     final ImportMode? mode,
-    final CameraController? camController,
-    final bool? isInitialized,
+    File? selectedImage,
   }) {
     return HomeState(
       isLoading: isLoading ?? this.isLoading,
@@ -38,8 +34,7 @@ class HomeState extends BaseState<int> {
       data: data ?? this.data,
       recipesList: recipesList ?? this.recipesList,
       mode: mode ?? this.mode,
-      camController: camController ?? this.camController,
-      isInitialized: isInitialized ?? this.isInitialized,
+      selectedImage: selectedImage ?? selectedImage,
     );
   }
 }

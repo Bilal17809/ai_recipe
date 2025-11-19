@@ -1,6 +1,7 @@
 import 'package:ai_recipe/core/Utility/Utils.dart';
 import 'package:ai_recipe/core/theme/app_colors.dart';
 import 'package:ai_recipe/core/theme/app_styles.dart';
+import 'package:ai_recipe/pages/home/providers/home_notifier.dart';
 import 'package:ai_recipe/pages/home/widgets/grid_list.dart';
 import 'package:ai_recipe/pages/home/widgets/import_from.dart';
 import 'package:ai_recipe/pages/home/widgets/photo_import_sheet.dart';
@@ -14,6 +15,7 @@ class HomeView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+
     return Scaffold(
       backgroundColor: kWhiteF7,
       appBar: AppBar(
@@ -26,6 +28,7 @@ class HomeView extends ConsumerWidget {
       ),
       body: Consumer(
         builder: (context, ref, child) {
+          final notifiers = ref.read(homeProvider.notifier);
          return SingleChildScrollView(
                   padding: EdgeInsets.symmetric(horizontal: 18, vertical: 18),
                   child: Column(
@@ -63,12 +66,18 @@ class HomeView extends ConsumerWidget {
                               SizedBox(width: 06),
                               _CommonButton(
                                 icon: Icons.camera_alt_outlined,
-                                onTap: () {
-                                  Utils.show(context, PhotoImportSheet(onUploadTap: (){
-
-                                  }));
+                                onTap: ()async {
+                                  Utils.show(
+                                    context,
+                                    PhotoImportSheet(onUploadTap: () {}),
+                                  );
+                                  // Future.delayed(Duration(milliseconds: 300), () {
+                                  //   final notifier = ref.read(homeProvider.notifier);
+                                  //   notifier.pickFromCamera();
+                                  // });
                                 },
                               ),
+
                               SizedBox(width: 06),
                               _CommonButton(
                                 icon: Icons.edit,

@@ -1,3 +1,4 @@
+import 'package:ai_recipe/core/common/common_button.dart';
 import 'package:ai_recipe/core/common/positioned.dart';
 import 'package:ai_recipe/core/theme/app_colors.dart';
 import 'package:ai_recipe/core/theme/app_styles.dart';
@@ -76,33 +77,34 @@ class ImportFrom extends StatelessWidget {
                   style: bodySmallStyle.copyWith(wordSpacing: 1),
                 ),
                 SizedBox(height: 10),
-                Container(
-                  padding: EdgeInsets.all(10),
-                  decoration: roundedDecoration.copyWith(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.deepPurple,
-                  ),
-                  child: Center(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.camera_alt_outlined,
-                          color: kWhite,
-                          size: 20,
-                        ),
-                        SizedBox(width: 06),
-                        Text(
-                          "Import from gallery",
-                          style: bodyMediumStyle.copyWith(
-                            color: kWhite,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                CommonButton(text: "Import from gallery",leadingIcon: Icons.camera_alt_outlined,)
+                // Container(
+                //   padding: EdgeInsets.all(10),
+                //   decoration: roundedDecoration.copyWith(
+                //     borderRadius: BorderRadius.circular(10),
+                //     color: Colors.deepPurple,
+                //   ),
+                //   child: Center(
+                //     child: Row(
+                //       mainAxisAlignment: MainAxisAlignment.center,
+                //       children: [
+                //         Icon(
+                //           Icons.camera_alt_outlined,
+                //           color: kWhite,
+                //           size: 20,
+                //         ),
+                //         SizedBox(width: 06),
+                //         Text(
+                //           "Import from gallery",
+                //           style: bodyMediumStyle.copyWith(
+                //             color: kWhite,
+                //             fontWeight: FontWeight.w500,
+                //           ),
+                //         ),
+                //       ],
+                //     ),
+                //   ),
+                // ),
               ],
             ),
           ),
