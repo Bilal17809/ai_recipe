@@ -2,6 +2,8 @@ import 'dart:io';
 import 'package:ai_recipe/core/common/common_button.dart';
 import 'package:ai_recipe/core/common/loading.dart';
 import 'package:ai_recipe/core/theme/app_styles.dart';
+import 'package:ai_recipe/extension/decoration_extension.dart';
+import 'package:ai_recipe/extension/extension.dart';
 import 'package:flutter/material.dart';
 import '/core/common/bottomshet_header.dart';
 import '/core/theme/app_colors.dart';
@@ -33,7 +35,7 @@ class PhotoImportSheet extends ConsumerWidget {
           Container(
             padding: EdgeInsets.all(04),
             decoration: BoxDecoration(
-              color: kWhite,
+              // color: kWhite,
               borderRadius: BorderRadius.circular(10),
               border: Border.all(color: Colors.grey.withAlpha(60), width: 1),
             ),
@@ -84,6 +86,7 @@ class PhotoImportSheet extends ConsumerWidget {
                   text: "Import recipe",
                   leadingIcon: Icons.camera_alt_outlined,
                 ),
+
             ],
           ),
         ],
@@ -103,11 +106,15 @@ class _Tab extends StatelessWidget {
     return Container(
       width: double.infinity,
       padding: EdgeInsets.all(08),
-      decoration: BoxDecoration(
-        color: active ? appColorDeepPurple.withAlpha(40) : Colors.white,
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: active ? appColorDeepPurple : Colors.white),
+      decoration:context.changeButtonDec.copyWith(
+          color: active ? appColorDeepPurple.withAlpha(40) : null,
+          border: Border.all(color: active ? appColorDeepPurple : context.bgColor ),
       ),
+      // BoxDecoration(
+      //   // color: active ? appColorDeepPurple.withAlpha(40) : Colors.white,
+      //   borderRadius: BorderRadius.circular(10),
+      //   border: Border.all(color: active ? appColorDeepPurple : kWhiteF7),
+      // ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

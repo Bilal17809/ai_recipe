@@ -13,7 +13,7 @@ part of 'home_notifier.dart';
 const homeProvider = HomeNotifierProvider._();
 
 final class HomeNotifierProvider
-    extends $NotifierProvider<HomeNotifier, HomeState> {
+    extends $NotifierProvider<HomeNotifier, dynamic> {
   const HomeNotifierProvider._()
     : super(
         from: null,
@@ -33,28 +33,28 @@ final class HomeNotifierProvider
   HomeNotifier create() => HomeNotifier();
 
   /// {@macro riverpod.override_with_value}
-  Override overrideWithValue(HomeState value) {
+  Override overrideWithValue(dynamic value) {
     return $ProviderOverride(
       origin: this,
-      providerOverride: $SyncValueProvider<HomeState>(value),
+      providerOverride: $SyncValueProvider<dynamic>(value),
     );
   }
 }
 
-String _$homeNotifierHash() => r'fb833ce2ca8485191f3c2783b17dcfc9a57e7fca';
+String _$homeNotifierHash() => r'2bcf4a23e0d9be6ae4cdded40d5f47d2ef329223';
 
-abstract class _$HomeNotifier extends $Notifier<HomeState> {
-  HomeState build();
+abstract class _$HomeNotifier extends $Notifier<dynamic> {
+  dynamic build();
   @$mustCallSuper
   @override
   void runBuild() {
     final created = build();
-    final ref = this.ref as $Ref<HomeState, HomeState>;
+    final ref = this.ref as $Ref<dynamic, dynamic>;
     final element =
         ref.element
             as $ClassProviderElement<
-              AnyNotifier<HomeState, HomeState>,
-              HomeState,
+              AnyNotifier<dynamic, dynamic>,
+              dynamic,
               Object?,
               Object?
             >;

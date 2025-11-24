@@ -17,6 +17,7 @@ class Recipes extends StatelessWidget {
       width: double.infinity,
       margin: const EdgeInsets.only(bottom: 12),
       decoration: context.roundedDecorationWithShadow.copyWith(
+        border: Border.all(color: kWhiteF7),
         borderRadius: BorderRadius.circular(10)
       ),
       child: Row(

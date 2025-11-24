@@ -49,7 +49,7 @@ class RecipesView extends ConsumerWidget {
                 else
                   Expanded(
                     child: ListView.builder(
-                      padding: const EdgeInsets.symmetric(vertical: 20),
+                      padding: const EdgeInsets.symmetric(vertical: 16),
                       itemCount: recipesState.recipesList.length + 1,
                       itemBuilder: (context, index) {
                         if (index == 0) {

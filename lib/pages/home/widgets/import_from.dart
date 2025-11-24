@@ -2,6 +2,7 @@ import 'package:ai_recipe/core/common/common_button.dart';
 import 'package:ai_recipe/core/common/positioned.dart';
 import 'package:ai_recipe/core/theme/app_colors.dart';
 import 'package:ai_recipe/core/theme/app_styles.dart';
+import 'package:ai_recipe/extension/decoration_extension.dart';
 import 'package:flutter/material.dart';
 
 class ImportFrom extends StatelessWidget {
@@ -10,8 +11,8 @@ class ImportFrom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: roundedDecoration.copyWith(
-        color: kWhite,
+      decoration: context.roundedDecorationWithShadow.copyWith(
+        // color: kWhite,
         border: Border.all(color: kWhiteF7),
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(10),
@@ -27,7 +28,7 @@ class ImportFrom extends StatelessWidget {
               Container(
                 width: double.infinity,
                 height: 180,
-                decoration: roundedDecoration.copyWith(
+                decoration: context.roundedDecorationWithShadow.copyWith(
                   color: kBlack,
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.zero,

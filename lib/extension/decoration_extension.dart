@@ -1,3 +1,4 @@
+import 'package:ai_recipe/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 extension DecorationExtension on BuildContext {
@@ -22,6 +23,12 @@ extension DecorationExtension on BuildContext {
         borderRadius: BorderRadius.circular(14),
         border: Border.all(color:isDark?const Color(0xff3A3A3A) :Colors.grey.shade300),
       );
-
+      
+  
+  BoxDecoration get changeButtonDec => BoxDecoration(
+    color: isDark ? null : kWhiteF7,
+    border: Border.all(color: isDark ? appColorDeepPurple : kWhiteF7),
+    borderRadius: BorderRadius.circular(10),
+  );
 
 }

@@ -1,3 +1,4 @@
+import 'package:ai_recipe/extension/extension.dart';
 import 'package:flutter/material.dart';
 
 class Utils {
@@ -7,7 +8,7 @@ class Utils {
     return showModalBottomSheet(
       context: context,
       isScrollControlled: true,
-      backgroundColor: Colors.white,
+      backgroundColor: context.bgColor,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),

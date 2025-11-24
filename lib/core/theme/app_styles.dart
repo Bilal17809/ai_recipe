@@ -8,7 +8,7 @@ const TextStyle headlineMediumStyle = TextStyle(
   fontFamily: fontFamily,
   fontSize: 30,
   fontWeight: FontWeight.w700,
-  color: kBlack,
+  // color: kBlack,
 );
 
 const TextStyle splashText = TextStyle(
@@ -22,28 +22,28 @@ const TextStyle headlineSmallStyle = TextStyle(
   fontFamily: fontFamily,
   fontSize: 24,
   fontWeight: FontWeight.w500,
-  color: kBlack,
+  // color: kBlack,
 );
 
 const TextStyle titleLargeStyle = TextStyle(
   fontFamily: fontFamily,
   fontSize: 22,
   fontWeight: FontWeight.w500,
-  color: kBlack,
+  // color: kBlack,
 );
 
 const TextStyle titleMediumStyle = TextStyle(
   fontFamily: fontFamily,
   fontSize: 20,
   fontWeight: FontWeight.w500,
-  color: kBlack,
+  // color: kBlack,
 );
 
 const TextStyle titleSmallStyle = TextStyle(
   fontFamily: fontFamily,
   fontSize: 16,
   fontWeight: FontWeight.w500,
-  color: kBlack,
+  // color: kBlack,
 );
 
 const TextStyle bodyLargeStyle = TextStyle(
@@ -56,7 +56,7 @@ const TextStyle bodyMediumStyle = TextStyle(
   fontFamily: fontFamily,
   fontSize: 14,
   fontWeight: FontWeight.w400,
-  color: kBlack,
+  // color: kBlack,
 );
 
 const TextStyle bodySmallStyle = TextStyle(
@@ -75,13 +75,13 @@ const TextStyle labelMediumStyle = TextStyle(
   fontFamily: fontFamily,
   fontSize: 14,
   fontWeight: FontWeight.w500,
-  color: kBlack,
+  // color: kBlack,
 );
 const TextStyle labelSmallStyle = TextStyle(
   fontFamily: fontFamily,
   fontSize: 12,
   fontWeight: FontWeight.w500,
-  color: kBlack,
+  // color: kBlack,
 );
 //decoration
 

@@ -29,7 +29,7 @@ class BottomSheetsHeader extends StatelessWidget {
               Text(
                 title,
                 style: bodyLargeStyle.copyWith(
-                  color: kBlack,
+                  // color: kBlack,
                   fontWeight: FontWeight.bold,
                 ),
               ),
