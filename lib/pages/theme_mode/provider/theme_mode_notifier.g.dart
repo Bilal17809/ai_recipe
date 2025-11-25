@@ -30,7 +30,7 @@ final class ThemeNotifierProvider
 
   @$internal
   @override
-  ThemeNotifier create() => ThemeNotifier();
+  ThemeNotifier create() => ThemeNotifier(storageService:StorageService());
 
   /// {@macro riverpod.override_with_value}
   Override overrideWithValue(ThemeState value) {

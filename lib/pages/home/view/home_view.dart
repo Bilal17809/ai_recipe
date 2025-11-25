@@ -1,8 +1,8 @@
 import 'package:ai_recipe/core/Utility/Utils.dart';
-import 'package:ai_recipe/core/theme/app_colors.dart';
-import 'package:ai_recipe/core/theme/app_styles.dart';
-import 'package:ai_recipe/extension/extension.dart';
-import 'package:ai_recipe/pages/home/providers/home_notifier.dart';
+import '/core/theme/app_colors.dart';
+import '/core/theme/app_styles.dart';
+import '/extension/extension.dart';
+import '/pages/home/providers/home_notifier.dart';
 import '/pages/home/widgets/grid_list.dart';
 import '/pages/home/widgets/import_from.dart';
 import 'package:ai_recipe/pages/home/widgets/photo_import_sheet.dart';

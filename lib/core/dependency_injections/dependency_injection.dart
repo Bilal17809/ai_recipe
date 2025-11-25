@@ -14,6 +14,11 @@ import 'package:ai_recipe/domain/repo/recipe_repo.dart';
 import '../../data/repo_imp/repo_implementation.dart';
 import '../../domain/usecasses/recipe_usecase.dart';
 
+
+class DependencyInjection {
+
+}
+
 final apiClientProvider = Provider<ApiClient>((ref) {
   return ApiClient();
 });

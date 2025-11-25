@@ -8,14 +8,14 @@ class Recipe {
 
 
 
-class RecipeModelForMisteral {
+class RecipeModelForMistral {
   final String title;
   final List<String>? ingredients;
   final List<String>? steps;
   final int? cookingTime;
   final int? servings;
 
-  RecipeModelForMisteral({
+  RecipeModelForMistral({
     required this.title,
     this.ingredients,
     this.steps,
@@ -23,7 +23,7 @@ class RecipeModelForMisteral {
     this.servings,
   });
 
-  factory RecipeModelForMisteral.fromJson(Map<String, dynamic> json) {
+  factory RecipeModelForMistral.fromJson(Map<String, dynamic> json) {
 
     final ingredients = (json['ingredients'] as List?)?.map((e) => e.toString()).toList();
     final steps = (json['steps'] as List?)?.map((e) => e.toString()).toList();
@@ -31,7 +31,7 @@ class RecipeModelForMisteral {
     final servings = json['servings'] != null ? int.tryParse(json['servings'].toString()) : null;
     final title = json['title']?.toString() ?? 'Recipe';
 
-    return RecipeModelForMisteral(
+    return RecipeModelForMistral(
       title: title,
       ingredients: ingredients,
       steps: steps,

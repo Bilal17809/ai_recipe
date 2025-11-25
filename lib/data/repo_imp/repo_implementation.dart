@@ -23,9 +23,9 @@ class RecipeRepositoryImpl implements RecipeRepository {
 
 
     @override
-     Future<RecipeModelForMisteral> getRecipeFromMistral(String imagePath)async{
+     Future<RecipeModelForMistral> getRecipeFromMistral(String imagePath)async{
     final model = await remote.analyzeFoodImageWithMistral(imagePath);
-    return RecipeModelForMisteral(
+    return RecipeModelForMistral(
         title: model.title,
         ingredients: model.ingredients,
         steps: model.steps,

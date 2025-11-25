@@ -7,10 +7,14 @@ part 'theme_mode_notifier.g.dart';
 
 @riverpod
 class ThemeNotifier extends _$ThemeNotifier {
-  late final StorageService _storageService;
+  final StorageService _storageService;
+  ThemeNotifier({
+    required StorageService storageService
+}): _storageService=storageService;
+  // late final StorageService _storageService;
   @override
   ThemeState build() {
-    _storageService = StorageService();
+    // _storageService = StorageService();
     final saved = _storageService.getThemeMode();
     ThemeMode mode;
     switch (saved) {

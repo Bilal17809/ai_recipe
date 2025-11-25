@@ -18,7 +18,7 @@ class RemoteDataSource {
   // }
 
 
-  Future<RecipeModelForMisteral> analyzeFoodImageWithMistral(String imagePath) async{
+  Future<RecipeModelForMistral> analyzeFoodImageWithMistral(String imagePath) async{
    try{
      return await _apiClient.getRecipeFromMistral(imagePath, ApiRoutes.misteralApi);
    }catch(e){

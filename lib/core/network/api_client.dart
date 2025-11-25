@@ -40,7 +40,7 @@ class ApiClient {
   //   return RecipeModel.fromJson(decoded);
   // }
 
-  Future<RecipeModelForMisteral> getRecipeFromMistral(
+  Future<RecipeModelForMistral> getRecipeFromMistral(
       String imagePath,
       String apiKey,
       ) async {
@@ -108,6 +108,6 @@ Image: data:image/jpeg;base64,$base64Image
       contentResponse = contentResponse.substring(0, contentResponse.length - 3).trim();
     }
     final recipeJson = jsonDecode(contentResponse);
-    return RecipeModelForMisteral.fromJson(recipeJson);
+    return RecipeModelForMistral.fromJson(recipeJson);
   }
 }

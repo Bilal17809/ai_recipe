@@ -9,7 +9,7 @@ class GetRecipeFromMisteral {
 
   GetRecipeFromMisteral(this.repository);
 
-  Future<RecipeModelForMisteral> call(String imagePath) {
+  Future<RecipeModelForMistral> call(String imagePath) {
     return repository.getRecipeFromMistral(imagePath);
   }
 
